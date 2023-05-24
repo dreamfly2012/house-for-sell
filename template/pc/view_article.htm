@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{$eyou.field.seo_title}</title>
+<meta name="description" content="{$eyou.field.seo_description}" />
+<meta name="keywords" content="{$eyou.field.seo_keywords}" />
+<link href="{eyou:global name='web_cmspath' /}/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/bootstrap.min.css" rel="stylesheet">
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/swiper-3.3.1.min.css" rel="stylesheet" />
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/animate.css" rel="stylesheet">
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/master.css" rel="stylesheet">
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/jquery-1.11.3.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/swiper-3.3.1.jquery.min.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/jquery.superslide.2.1.1.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/jquery.superslide.2.1.1.source.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/wow.min.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/funtion.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="wrapper">
+  {eyou:include file="nav.htm" /}
+  <div class="wrap">
+    {eyou:include file="header.htm" /}
+    {eyou:include file="banner.htm" /}
+    <div class="main main_search"><!-- 新增main_search -->
+      <div class="container">
+        <div class="here"><span>当前位置 ：</span> {eyou:position/}</div>
+        <div class="news_title">{$eyou.field.titlr} </div>
+        <div class="news_publish">来源：{$eyou.field.typename}   {$eyou.field.add_time|MyDate='Y-m-d',###}</div>
+        <div class="about_det news_det">
+        {$eyou.field.content} 
+         </div>
+        <div class="next2">
+          <div class="share_box">
+            <div class="bdsharebuttonbox"> <a href="#" class="bds_more" data-cmd="more" style="color:#333">分享到：</a> <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a> <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a> <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a> <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a> </div>
+            <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                </script> 
+          </div>
+          <ul>
+            {eyou:prenext get='pre' empty='<li><a>上一篇：暂无</a></li>'}
+            <li><a href="{$field.arcurl}" title="{$field.title}"> 上一篇：{$field.title} </a></li>
+            {/eyou:prenext}
+            {eyou:prenext get='next' empty='<li><a>下一篇：暂无</a></li>'}
+            <li><a href="{$field.arcurl}" title="{$field.title}"> 下一篇：{$field.title} </a></li>
+            {/eyou:prenext}
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- foot_start -->
+    {eyou:include file="footer.htm" /}
+  </div>
+</div>
+</body>
+</html>

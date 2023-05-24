@@ -1,0 +1,17 @@
+<div class="headline ny_headline">
+  <div class="cn">{$eyou.field.typeid|gettoptype=###,'typename'}</div>
+  <div class="en">{$eyou.field.typeid|gettoptype=###,'englist_name'}</div>
+</div>
+<div class="left">
+  <div class="left_top">
+    <div class="title">{$eyou.field.typename}</div>
+    <div class="classify"></div>
+  </div>
+  <div class="left_list">
+    <ul class="first">
+      {eyou:channel type='first' id='field' currentstyle='cu1'}
+      <li><a class="{$field.currentstyle}" href="{$field.typeurl}">{$field.typename}</a></li>
+      {/eyou:channel}
+    </ul>
+  </div>
+</div>

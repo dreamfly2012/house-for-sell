@@ -1,0 +1,38 @@
+<div class="header">
+      <div class="container">
+        <div class="head">
+          <div class="logo"><a href="{eyou:global name='web_cmsurl' /}"><i><img src="{eyou:global name='web_logo' /}"></i></a></div>
+          <div class="nav">
+            <ul class="one">
+              <li class="{eyou:eq name='$Think.const.CONTROLLER_NAME' value='Index'}on{/eyou:eq}"><a href="{eyou:global name='web_cmsurl' /}">首页</a></li>
+              {eyou:channel type="top" row="60" id="field" currentstyle="on"}
+              <li class="{$field.currentstyle}"> <a href="{$field.typeurl}">{$field.typename}</a>
+               {eyou:notempty name="$field.children"}
+                <ul class="two">
+                  {eyou:channel name="$field.children" row="100" id="field2"}
+                  <li><a href="{$field2.typeurl}">{$field2.typename}</a></li>
+                  {/eyou:channel}
+                </ul>
+                {/eyou:notempty}
+              </li>
+             {/eyou:channel} 
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- head_end -->
+    <div class="mheader">
+      <div class="nav_button"></div>
+      <div class="mlogo"><a href="{eyou:global name='web_cmsurl' /}"><img src="{eyou:global name='web_logo' /}"></a></div>
+      <div class="head_sear"></div>
+      <div class="search">
+      {eyou:searchform type='default'}
+        <form method="get" action="{$field.action}">
+          {$field.hidden}
+          <input class="sear_box fl" type="text" name="keywords" id="keyword" placeholder="请输入关键词" />
+          <input class="sear_btn fr" type="submit" src="images/search.png" value="" />
+        </form>
+      {/eyou:searchform}   
+      </div>
+    </div>

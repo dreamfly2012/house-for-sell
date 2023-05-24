@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /install_*
+Disallow: /core
+Disallow: /application
+Sitemap: http://fangwu.80shihua.com/sitemap.xml

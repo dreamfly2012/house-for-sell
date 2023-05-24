@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{$eyou.field.seo_title}</title>
+<meta name="description" content="{$eyou.field.seo_description}" />
+<meta name="keywords" content="{$eyou.field.seo_keywords}" />
+<link href="{eyou:global name='web_cmspath' /}/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/bootstrap.min.css" rel="stylesheet">
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/swiper-3.3.1.min.css" rel="stylesheet" />
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/animate.css" rel="stylesheet">
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/master.css" rel="stylesheet">
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/jquery-1.11.3.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/swiper-3.3.1.jquery.min.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/jquery.superslide.2.1.1.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/jquery.superslide.2.1.1.source.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/wow.min.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/funtion.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="wrapper">
+  {eyou:include file="nav.htm" /}
+  <div class="wrap">
+    {eyou:include file="header.htm" /}
+    {eyou:include file="banner.htm" /}
+    <div class="main">
+      <div class="container main_container">
+        {eyou:include file="left.htm" /}
+        <div class="right">
+          <div class="pro_list">
+            <ul>
+            {eyou:list titlelen='40' pagesize='6'}
+              <li class="pro_item"><a href="{$field.arcurl}">
+                <div class="pro_img"><img src="{$field.litpic}"></div>
+                <div class="pro_intro">
+                  <div class="pro_bt">{$field.title}</div>
+                  <div class="pro_nr pro_des">{$field.seo_description|html_msubstr=###,0,10,true}</div>
+                  <div class="pro_price">{eyou:field aid='$field.aid' addfields='danjia' /}</div>
+                </div>
+                </a></li>
+            {/eyou:list}     
+            </ul>
+          </div>
+          <div class="next1"> 
+           <ul>
+            {eyou:pagelist listitem='index,pre,pageno,next,end' listsize='2' /}
+           </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- foot_start -->
+    {eyou:include file="footer.htm" /}
+  </div>
+</div>
+</body>
+</html>

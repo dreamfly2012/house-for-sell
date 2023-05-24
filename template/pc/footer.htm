@@ -1,0 +1,126 @@
+<div class="footer">
+      <div class="foot_above">
+        <div class="container">
+          <div class="con_form">
+            {eyou:guestbookform type='default' typeid='13'}
+          <form method="POST" class="guest-form" enctype="multipart/form-data" action="{$field.action}" onsubmit="return checkForm();">
+              <div class="con_line">
+                <div class="con_name">{$field.itemname_1}</div>
+                <div class="con_input">
+                  <input type="text" name="{$field.attr_1}" id="attr_1">
+                </div>
+              </div>
+              <div class="con_line">
+                <div class="con_name">{$field.itemname_2}</div>
+                <div class="con_input">
+                  <input type="text" name="{$field.attr_2}" id="attr_2">
+                </div>
+              </div>
+              <div class="con_line">
+                <div class="con_name">{$field.itemname_3}</div>
+                <div class="con_input">
+                  <input type="text" name="{$field.attr_3}" id="attr_3">
+                </div>
+              </div>
+              <div class="con_line">
+                <div class="con_name">{$field.itemname_4}</div>
+                <div class="con_input">
+                  <input type="email" name="{$field.attr_4}" id="attr_4">
+                </div>
+              </div>
+              <div class="con_line con_line_box">
+                <div class="con_name">{$field.itemname_5}</div>
+                <div class="con_input">
+                  <textarea name="{$field.attr_5}" id="attr_5" placeholder="输入{$field.itemname_5}"></textarea>
+                </div>
+              </div>
+
+              <div class="con_sub">
+                <input class="" type="submit" value="提交">
+              </div>
+            {$field.hidden}
+          </form>
+          <script type="text/javascript">
+            function checkForm()
+            {
+              if(document.getElementById('attr_1').value.length == 0)
+              {
+                alert('请输入您的{$field.itemname_1}');
+                return false;
+              }
+              if(document.getElementById('attr_2').value.length == 0)
+              {
+                alert('请输入您的{$field.itemname_2}');
+                return false;
+              }
+              
+              return true;
+            }
+          </script>
+        {/eyou:guestbookform}
+          </div>
+          <div class="con_area">
+            <div class="con_list">
+              <ul>
+                <li class="con_wx">
+                  <div class="con_wx_hover fadeIn wow">
+                    <div class="con_wx_img img_c"><i><img src="{eyou:global name='web_attr_1' /}"></i></div>
+                  </div>
+                </li>
+                <li class="con_qq"> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&site={eyou:global name='web_name' /}&menu=yes&uin={eyou:global name='web_attr_2' /}" alt="QQ在线咨询"></a></li>
+                <li class="con_wb"><a target="_blank" href="{eyou:global name='web_attr_3' /}"></a></li>
+              </ul>
+            </div>
+            <div class="con_tel">购房热线： <span>{eyou:global name='web_attr_4' /}</span></div>
+            <div class="con_nr">
+              <dd><span>地       址：</span>{eyou:global name='web_attr_5' /}</dd>
+              <dd><span>邮       箱：</span>{eyou:global name='web_attr_6' /}</dd>
+              <dd><span>传       真：</span>{eyou:global name='web_attr_7' /}</dd>
+            </div>
+            <div class="con_erweima img_c"><i><img src="{eyou:global name='web_attr_1' /}"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="foot_below">
+        <div class="container">
+          <div class="linker">
+            <ul>
+            {eyou:flink titlelen='45' type='text' ro='24'}
+              <li><a href="{$field.url}" {$field.target}>{$field.title} </a></li>
+            {/eyou:flink}
+            </ul>
+          </div>
+          <div class="copyright">
+            <p>{eyou:global name='web_copyright' /} &nbsp; &nbsp; &nbsp;{eyou:global name='web_recordnum' /} </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="side">
+      <ul>
+        <li class="side_sr"> 
+          <!-- <div class="side_hover side_sr_hover">
+                <div class="side_box side_sr_box">
+                    <input type="text" name="s" id="keyword" placeholder="请输入关键词" />
+                </div>
+            </div> -->
+         {eyou:searchform type='default'}
+          <form class="sr_hover" method="get" action="{$field.action}">
+            {$field.hidden}
+            <input class="sr_hover_btn fr" type="submit" value="" />
+            <div class="sr_hover_box fl">
+              <input type="text" name="keywords" id="keyword" placeholder="请输入关键词" />
+            </div>
+          </form>
+          {/eyou:searchform} 
+        </li>
+        <li class="side_tel">
+          <div class="tel_hover"><span>{eyou:global name='web_attr_4' /}</span></div>
+        </li>
+        <li class="side_top"></li>
+      </ul>
+    </div>
+   {eyou:global name='web_thirdcode_pc' /}
+  <!-- 应用插件标签 start -->
+  {eyou:weapp type='default' /}
+  <!-- 应用插件标签 end -->

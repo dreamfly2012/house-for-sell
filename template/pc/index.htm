@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{eyou:global name='web_title' /}</title>
+<meta name="description" content="{eyou:global name='web_description' /}" />
+<meta name="keywords" content="{eyou:global name='web_keywords' /}" />
+<link href="{eyou:global name='web_cmspath' /}/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/bootstrap.min.css" rel="stylesheet">
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/swiper-3.3.1.min.css" rel="stylesheet" />
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/animate.css" rel="stylesheet">
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/master.css" rel="stylesheet">
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/jquery-1.11.3.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/swiper-3.3.1.jquery.min.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/jquery.superslide.2.1.1.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/jquery.superslide.2.1.1.source.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/wow.min.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/funtion.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="wrapper">
+  {eyou:include file="nav.htm" /}
+  <div class="wrap">
+    {eyou:include file="header.htm" /}
+    
+    <!-- banner_start -->
+    <div class="banner ibanner">
+      <div class="swiper-container swiper-container-banner">
+        <ul class="swiper-wrapper swiper-wrapper-banner">
+        {eyou:adv pid='1'}
+          <li class="swiper-slide swiper-slide-banner"><a href="{$field.links}"><img src="{$field.litpic}"></a></li>
+        {/eyou:adv}  
+        </ul>
+        <!-- <ul class="swiper-pagination swiper-pagination-banner"><li></li></ul> -->
+        <div class="timer"></div>
+        <!-- 进度条 --> 
+      </div>
+    </div>
+    
+    <!-- banner_end -->
+    
+    <div class="product">
+      <div class="container">
+        <div class="headline fadeInDown wow">
+          <div class="cn">优质推荐</div>
+          <div class="en">High quality recommendation</div>
+          {eyou:channelartlist typeid='3'}<div class="imore_pc"><a href="{eyou:field name='typeurl' /}">VIEW MORE</a></div>{/eyou:channelartlist}  
+        </div>
+        <div class="pro_slide">
+          <div class="hd hd_pro fadeInUp wow">
+            {eyou:channelartlist typeid='3'}<div class="pro_click">{eyou:field name='typename' /}</div>{/eyou:channelartlist}  
+            <ul>
+            {eyou:channelartlist typeid='3,4,5'}
+              <li>{eyou:field name='typename' /}</li>
+            {/eyou:channelartlist}  
+            </ul>
+          </div>
+          <div class="bd bd_pro fadeInRight wow">
+          {eyou:channelartlist typeid='3,4,5'}
+            <div class="pro_data">
+              <ul>
+              {eyou:arclist row='6' titlelen='40'}
+                <li class="pro_item"><a href="{$field.arcurl}">
+                  <div class="pro_img"><img src="{$field.litpic}" alt="{$field.title}"></div>
+                  <div class="pro_intro">
+                    <div class="pro_bt">{$field.title}</div>
+                    <div class="pro_nr">{$field.seo_description|html_msubstr=###,0,10,true}</div>
+                    <div class="pro_price">{eyou:field aid='$field.aid' addfields='danjia' /}</div>
+                  </div>
+                  </a></li>
+               {/eyou:arclist}   
+              </ul>
+            </div>
+          {/eyou:channelartlist}  
+          </div>
+        </div>
+        {eyou:channelartlist typeid='3'}<div class="imore_mc"><a href="{eyou:field name='typeurl' /}">MORE</a></div>{/eyou:channelartlist}  
+      </div>
+    </div>
+    {eyou:channelartlist typeid='2'}
+    <div class="news">
+      <div class="container">
+        <div class="headline">
+          <div class="cn">{eyou:field name='typename' /}</div>
+          <div class="en">{eyou:field name='englist_name' /}</div>
+        </div>
+      </div>
+      <div class="news_data">
+        <ul>
+        {eyou:arclist row='3' titlelen='40'}
+          <li class="news_item">
+            <div class="container"><a href="{$field.arcurl}">
+              <dl class="news_time">
+                <dd class="news_d">{$field.add_time|MyDate='m-d',###}</dd>
+                <dd class="news_y">{$field.add_time|MyDate='Y',###}</dd>
+              </dl>
+              <dl class="news_intro">
+                <dd class="news_bt">{$field.title}</dd>
+                <dd class="news_nr">{$field.seo_description|html_msubstr=###,0,120,true}</dd>
+              </dl>
+              </a></div>
+          </li>
+          {/eyou:arclist} 
+        </ul>
+      </div>
+      <div class="container">
+        <div class="imore_pc"><a href="{eyou:field name='typeurl' /}">VIEW MORE</a></div>
+        <div class="imore_mc"><a href="{eyou:field name='typeurl' /}">MORE</a></div>
+      </div>
+    </div>
+    {/eyou:channelartlist}  
+    {eyou:channelartlist typeid='1'}
+    <div class="advantage">
+      <div class="container">
+        <div class="headline">
+          <div class="cn">{eyou:field name='typename' /}</div>
+          <div class="en">{eyou:field name='englist_name' /}</div>
+        </div>
+        <div class="a_data">
+          <ul>
+          {eyou:channel type="son" row='3'}
+            <li {eyou:eq name='$i' value='1'}class="cu"{/eyou:eq}><a href="{$field.typeurl}">
+              <div class="a_left">
+                <dd class="a_img img_c"><i><img src="{$field.litpic}"></i></dd>
+                <dd class="a_bt">{$field.typename}</dd>
+              </div>
+              <div class="a_right">
+                <dd class="a_nr">{$field.seo_description|html_msubstr=###,0,90,true} </dd>
+              </div>
+              <em class="a_line"></em> </a></li>
+           {/eyou:channel} 
+          </ul>
+        </div>
+      </div>
+    </div>
+    {/eyou:channelartlist}  
+    <!-- foot_start -->
+    {eyou:include file="footer.htm" /}
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<div class="class page-prev visible-xs visible-sm">
+    <div class="m_list">
+      <ul class="m_one">
+        <li><a href="{eyou:global name='web_cmsurl' /}">首页</a></li>
+        {eyou:channel type="top" row="60" id="field" currentstyle="current"}
+        <li> <a {eyou:notempty name="$field.children"}href="javascript:;"{/eyou:notempty} href="{$field.typeurl}">{$field.typename}</a>
+          {eyou:notempty name="$field.children"}
+          <ul class="m_two">
+            {eyou:channel name="$field.children" row="100" id="field2"}
+              <li><a href="{$field2.typeurl}">{$field2.typename}</a></li>
+            {/eyou:channel}
+          </ul>
+          {/eyou:notempty}
+        </li>
+        {/eyou:channel}  
+      </ul>
+    </div>
+  </div>

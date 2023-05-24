@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{$eyou.field.seo_title}</title>
+<meta name="description" content="{$eyou.field.seo_description}" />
+<meta name="keywords" content="{$eyou.field.seo_keywords}" />
+<link href="{eyou:global name='web_cmspath' /}/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/bootstrap.min.css" rel="stylesheet">
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/swiper-3.3.1.min.css" rel="stylesheet" />
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/animate.css" rel="stylesheet">
+<link href="{eyou:global name='web_templets_pc' /}/skin/css/master.css" rel="stylesheet">
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/jquery-1.11.3.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/swiper-3.3.1.jquery.min.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/jquery.superslide.2.1.1.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/jquery.superslide.2.1.1.source.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/wow.min.js" type="text/javascript"></script>
+<script src="{eyou:global name='web_templets_pc' /}/skin/js/funtion.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="wrapper">
+  {eyou:include file="nav.htm" /}
+  <div class="wrap">
+    {eyou:include file="header.htm" /}
+    {eyou:include file="banner.htm" /}
+    <div class="main">
+      <div class="container main_container">
+        {eyou:include file="left.htm" /}
+        <div class="right">
+          <div class="news_list">
+            <ul>
+            {eyou:list titlelen='40' pagesize='6'}
+              <li class="news_item news_eg">
+                <div class="container ny_container"><a href="{$field.arcurl}">
+                  <dl class="news_time news_date">
+                    <dd class="news_d news_day">{$field.add_time|MyDate='m-d',###}</dd>
+                    <dd class="news_y news_year">{$field.add_time|MyDate='Y',###}</dd>
+                  </dl>
+                  <dl class="news_intro news_info">
+                    <dd class="news_bt news_tit"> {$field.title}</dd>
+                    <dd class="news_nr news_des"> {$field.seo_description|html_msubstr=###,0,100,true}</dd>
+                  </dl>
+                  </a></div>
+              </li>
+            {/eyou:list}  
+            </ul>
+          </div>
+          <div class="next1"> 
+          <ul>
+          {eyou:pagelist listitem='index,pre,pageno,next,end' listsize='2' /}
+          </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- foot_start -->
+    {eyou:include file="footer.htm" /}
+  </div>
+</div>
+</body>
+</html>
